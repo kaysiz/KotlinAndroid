@@ -5,6 +5,35 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    flavorDimensions "default"
+
+    productFlavors {
+
+        finalProduction {
+            dimension "default"
+            applicationId "kaysiz.co.zw.kotlinandroid"
+            resValue "string", "app_name", "Modern App"
+        }
+
+        demoProduction {
+            dimension "default"
+            applicationId "kaysiz.co.zw.kotlinandroid.demoproduction"
+            resValue "string", "app_name", "Modern App Demo P"
+        }
+
+        demoTesting {
+            dimension "default"
+            applicationId "kaysiz.co.zw.kotlinandroid.demotesting"
+            resValue "string", "app_name", "Modern App Demo T"
+        }
+
+
+        mock {
+            dimension "default"
+            applicationId "kaysiz.co.zw.kotlinandroid.mock"
+            resValue "string", "app_name", "Modern App Mock"
+        }
+    }
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
